@@ -46,7 +46,9 @@
         this.status = 0; // 状态，0：未启动   1：正在加载   2：播放中（没写）
         this.total = this.option.framesUrl.length || 0; //资源总数
         this.ctx = document.getElementById(this.option.canvasTargetId).getContext('2d'); // 画布上下文
-        
+        this.canvas = document.getElementById(this.option.canvasTargetId);
+        this.canvas.width = $("#" + this.option.canvasTargetId).width();
+        this.canvas.height = $("#" + this.option.canvasTargetId).height();
         var that = this;
         if(this.option.audioObject != null) {
             this.bgm = this.option.audioObject;
